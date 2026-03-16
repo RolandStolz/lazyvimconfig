@@ -25,3 +25,7 @@ vim.keymap.set("v", "<C-_>", "gc", { remap = true, desc = "Toggle comment" })
 -- change ops go to black hole (preserve system clipboard)
 vim.keymap.set({ "n", "v" }, "c", '"_c')
 vim.keymap.set({ "n", "v" }, "C", '"_C')
+
+-- <leader>l acts as <leader>c; Lazy moved to <leader>L
+vim.keymap.set("n", "<leader>l", "<leader>c", { remap = true, desc = "+code" })
+vim.keymap.set("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
