@@ -16,13 +16,41 @@ return {
           vim.notify("No tasks found", vim.log.levels.WARN)
         else
           overseer.run_action(tasks[1], "restart")
+          overseer.open({ enter = false })
         end
       end, {})
     end,
     keys = {
-      { "<leader>os", "<cmd>OverseerRun<cr>", desc = "Run task" },
+      {
+        "<leader>os",
+        function()
+          require("overseer").run_task({}, function(task)
+            if task then
+              require("overseer").open({ enter = true })
+            end
+          end)
+        end,
+        desc = "Run task",
+      },
       { "<leader>ol", "<cmd>OverseerToggle<cr>", desc = "Task list" },
       { "<leader>or", "<cmd>OverseerRestartLast<cr>", desc = "Re-run last task" },
+      {
+        "<leader>oc",
+        function()
+          local root = LazyVim.root.git()
+          local path = root .. "/.vscode/tasks.json"
+          if vim.fn.filereadable(path) == 0 then
+            vim.fn.mkdir(root .. "/.vscode", "p")
+            local f = io.open(path, "w")
+            if f then
+              f:write('{\n  "version": "2.0.0",\n  "tasks": []\n}\n')
+              f:close()
+            end
+          end
+          vim.cmd("edit " .. vim.fn.fnameescape(path))
+        end,
+        desc = "Open .vscode/tasks.json",
+      },
     },
   },
 }
