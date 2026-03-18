@@ -8,6 +8,7 @@ return {
             pylsp = {
               plugins = {
                 pycodestyle = { enabled = false },
+                pyflakes = { enabled = false },
               },
             },
           },
