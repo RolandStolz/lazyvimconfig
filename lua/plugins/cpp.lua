@@ -1,5 +1,5 @@
 return {
-  { import = "lazyvim.plugins.extras.lang.clangd" },
+  -- { import = "lazyvim.plugins.extras.lang.clangd" },
   {
     "Civitasv/cmake-tools.nvim",
     dependencies = { "akinsho/toggleterm.nvim" },

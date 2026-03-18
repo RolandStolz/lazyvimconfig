@@ -1,6 +1,13 @@
 return {
   "saghen/blink.cmp",
   opts = {
+    sources = {
+      providers = {
+        copilot = {
+          score_offset = -100,
+        },
+      },
+    },
     keymap = {
       preset = "default",
       ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
