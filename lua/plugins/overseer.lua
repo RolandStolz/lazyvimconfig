@@ -1,7 +1,13 @@
 return {
   {
     "stevearc/overseer.nvim",
-    opts = {},
+    opts = {
+      task_list = {
+        keymaps = {
+          ["dc"] = { "keymap.run_action", opts = { action = "stop" }, desc = "Stop task" },
+        },
+      },
+    },
     config = function(_, opts)
       local overseer = require("overseer")
       overseer.setup(opts)

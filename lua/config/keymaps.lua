@@ -18,7 +18,6 @@ vim.keymap.set("n", "<leader>mb", "<cmd>CMakeBuild<cr>", { desc = "CMake Build" 
 vim.keymap.set("n", "<leader>mr", "<cmd>CMakeRun<cr>", { desc = "CMake Run" })
 vim.keymap.set("n", "<leader>ms", "<cmd>CMakeSelectLaunchTarget<cr>", { desc = "CMake Select Launch Target" })
 
-
 -- cmd+/ to toggle comments (normal + visual)
 vim.keymap.set("n", "<C-_>", "gcc", { remap = true, desc = "Toggle comment" })
 vim.keymap.set("v", "<C-_>", "gc", { remap = true, desc = "Toggle comment" })
@@ -46,5 +45,5 @@ vim.keymap.set("n", "<leader>go", function()
 end, { desc = "Outline symbols" })
 
 -- <leader>l acts as <leader>c; Lazy moved to <leader>L
-vim.keymap.set("n", "<leader>l", "<leader>c", { remap = true, desc = "+code" })
-vim.keymap.set("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })
+-- vim.keymap.set("n", "<leader>l", "<leader>c", { remap = true, desc = "+code" })
+-- vim.keymap.set("n", "<leader>L", "<cmd>Lazy<cr>", { desc = "Lazy" })

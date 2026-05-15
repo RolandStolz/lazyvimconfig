@@ -1,10 +1,13 @@
 return {
   "saghen/blink.cmp",
   opts = {
+    completion = {
+      ghost_text = { enabled = false },
+    },
     sources = {
       providers = {
         copilot = {
-          score_offset = -100,
+          enabled = false,
         },
       },
     },
